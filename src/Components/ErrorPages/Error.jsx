@@ -2,8 +2,8 @@
 const Error = () => {
 
     return (
-        <div>
-            <h1>Error 404 !! The Page is not found</h1>
+        <div className="bg-pink-400 text-center text-2xl">
+            <h1 className="text-white">Error 404 !! The Page is not found</h1>
         </div>
     );
 };
