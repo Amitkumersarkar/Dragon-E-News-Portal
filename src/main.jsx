@@ -11,6 +11,7 @@ import Home from './Layouts/HomePages/Home';
 import CategoryNews from './Components/CategoryNews';
 import AuthLayout from './Layouts/AuthLayout';
 import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,8 +47,8 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: '/auth/register',
-        element: <h2>Register</h2>
+        path: '/auth/signup',
+        element: <SignUp></SignUp>
       }
     ]
   },
