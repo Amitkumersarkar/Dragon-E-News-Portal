@@ -1,10 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../Components/Header/Navbar";
 
 const AuthLayout = () => {
 
     return (
-        <div>
-            <h3>Auth Layout</h3>
+        <div className="font-poppins bg-[#F3F3F3]">
+            <header className="w-11/12 mx-auto py-3">
+                <Navbar></Navbar>
+            </header>
             <Outlet></Outlet>
         </div>
     );

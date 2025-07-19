@@ -10,6 +10,7 @@ import Error from './Components/ErrorPages/Error';
 import Home from './Layouts/HomePages/Home';
 import CategoryNews from './Components/CategoryNews';
 import AuthLayout from './Layouts/AuthLayout';
+import Login from './Pages/Login';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/auth/login',
-        element: <h2>Login</h2>
+        element: <Login></Login>
       },
       {
         path: '/auth/register',
