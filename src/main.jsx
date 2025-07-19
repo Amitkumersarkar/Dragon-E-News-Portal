@@ -9,6 +9,7 @@ import {
 import Error from './Components/ErrorPages/Error';
 import Home from './Layouts/HomePages/Home';
 import CategoryNews from './Components/CategoryNews';
+import AuthLayout from './Layouts/AuthLayout';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,7 +38,17 @@ const router = createBrowserRouter([
   },
   {
     path: '/auth',
-    element: <h1>Login pages</h1>
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: '/auth/login',
+        element: <h2>Login</h2>
+      },
+      {
+        path: '/auth/register',
+        element: <h2>Register</h2>
+      }
+    ]
   },
 ]);
 createRoot(document.getElementById('root')).render(
