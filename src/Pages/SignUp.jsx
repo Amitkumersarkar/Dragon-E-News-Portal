@@ -1,7 +1,16 @@
 
 
 const SignUp = () => {
-
+    // declared event handler
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // get form data here
+        const form = new FormData(e.target);
+        const name = form.get('name');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, email, password);
+    }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="flex flex-col items-center w-full max-w-md mx-auto space-y-6 px-4">
@@ -12,7 +21,7 @@ const SignUp = () => {
                     </p>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <form >
+                    <form onSubmit={handleSubmit}>
                         <div className="card-body space-y-4">
                             <fieldset className="fieldset">
                                 <label className="label font-semibold text-cyan-600">Name</label>
