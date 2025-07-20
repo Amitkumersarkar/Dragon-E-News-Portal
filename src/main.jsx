@@ -12,6 +12,7 @@ import CategoryNews from './Components/CategoryNews';
 import AuthLayout from './Layouts/AuthLayout';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
+import AuthProvider from './Provider/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +56,8 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
