@@ -3,7 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const SignUp = () => {
-    const { createNewUser } = useContext(AuthContext);
+    const { createNewUser, user, setUser } = useContext(AuthContext);
     // declared event handler
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,6 +17,7 @@ const SignUp = () => {
         createNewUser(email, password)
             .then((result) => {
                 const user = result.user;
+                setUser(user);
                 console.log(user);
             })
             .catch((error) => {
