@@ -2,7 +2,7 @@ import { FaEye, FaStar, FaShareAlt, FaRegBookmark } from "react-icons/fa";
 import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-    const { id, title, author, thumbnail_url, details, rating, total_view } = news;
+    const { _id, title, author, thumbnail_url, details, rating, total_view } = news;
 
     const formattedDate = new Date(
         news.author.published_date
@@ -51,7 +51,7 @@ const NewsCard = ({ news }) => {
                     <>
                         {details.slice(0, 200)}...
                         <Link
-                            to={`/news-details/${id}`}
+                            to={`/news/${news._id}`}
                             className="text-primary font-semibold cursor-pointer hover:underline"
                         >
                             Read More
