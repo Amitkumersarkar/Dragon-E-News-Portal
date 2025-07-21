@@ -9,17 +9,21 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    console.log(user);
+    const [loading, setLoading] = useState(true);
+    console.log(user, loading);
     // share auth data 
     const createNewUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
     //integrate sign in method
     const userLogin = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
     // declared signout method
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
     // create user info
@@ -29,10 +33,12 @@ const AuthProvider = ({ children }) => {
         createNewUser,
         logOut,
         userLogin,
+        loading
     };
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+            setLoading(false);
         })
         // returned function and stored user data
         return () => {
