@@ -24,6 +24,7 @@ const SignUp = () => {
                 const user = result.user;
                 setUser(user);
                 console.log(user);
+                // updateUserProfile({displayName:name,photoURL:photo})
             })
             .catch((error) => {
                 const errorCode = error.code;
