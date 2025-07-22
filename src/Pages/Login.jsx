@@ -7,14 +7,14 @@ const Login = () => {
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location);
+    // console.log(location);
     const handleSubmit2 = (e) => {
         e.preventDefault();
         // get form data here
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
+        // console.log(email, password);
         userLogin(email, password)
             .then((result) => {
                 const user = result.user;

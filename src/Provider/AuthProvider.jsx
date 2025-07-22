@@ -10,7 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    console.log(user, loading);
+    // console.log(user, loading);
     // share auth data 
     const createNewUser = (email, password) => {
         setLoading(true);

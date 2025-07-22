@@ -17,13 +17,13 @@ const SignUp = () => {
         }
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, email, password);
+        // console.log(name, email, password);
 
         createNewUser(email, password)
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                console.log(user);
+                // console.log(user);
                 // updateUserProfile({displayName:name,photoURL:photo})
             })
             .catch((error) => {
